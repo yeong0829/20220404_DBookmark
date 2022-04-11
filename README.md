@@ -15,3 +15,9 @@
       1. models -> DB로 옯기기 위한 py
    2. python manage.py migrate
       1. DB 테이블 만들기
+   3. bookmark/admin Bookmark
+      1. python manage.py createsuperuser
+      2. bookmark/models Bookmark \_\_str__()
+   4. bookmark/views BookmarkListview
+   5. urls, bookmar/urls bookmark:list
+   6. templates bookmark_list.html
