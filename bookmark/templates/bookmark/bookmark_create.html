@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Bookmark</title>
+</head>
+<body>
+
+<form action="{% url 'bookmark:add' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" balue="Add"></input>
+</form>
+
+</body>
+</html>
