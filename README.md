@@ -1,4 +1,4 @@
-# DBookmark
+``# DBookmark
 - project/urls.py -> app/urls/.py -> app/views.py -> models.py -> templates/app/index.html
 - admin.py : 관리자 사이트
 - form.py: 입력 사이트
@@ -21,3 +21,6 @@
    4. bookmark/views BookmarkListview
    5. urls, bookmar/urls bookmark:list
    6. templates bookmark_list.html
+   7. bookmark/views BookmarkCreateView
+   8. urls, bookmark/urls bookmark: add
+   9. templates bookmar_create.html
