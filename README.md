@@ -1,4 +1,4 @@
-``# DBookmark
+# DBookmark
 - project/urls.py -> app/urls/.py -> app/views.py -> models.py -> templates/app/index.html
 - admin.py : 관리자 사이트
 - form.py: 입력 사이트
