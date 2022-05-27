@@ -1,3 +1,5 @@
+from django.conf import settings
+from django.conf.urls.static import static
 from django.urls import path
 
 from bookmark.views import BookmarkListView, BookmarkCreateView, BookmarkDetilView, BookmarkUpdateView, \
@@ -12,3 +14,7 @@ urlpatterns = [
     path('edit/<int:pk>', BookmarkUpdateView.as_view(), name='edit'),   #bookmark:edit
     path('delete/<int:pk>/',  BookmarkDeleteView.as_view(), name='delete')
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+
