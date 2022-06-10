@@ -56,3 +56,6 @@
    - register
      - accounts/forms RegisterForm(UserCreationForm)
      - accounts/views register
+     - DBookmakr/urls, accounts/urls accounts:register
+     - accounts/templates/accounts register, register_done
+       - bookamrk/templates/bookmark_bookmark_list
