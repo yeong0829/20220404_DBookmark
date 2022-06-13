@@ -4,7 +4,14 @@
 
 {% block content %}
 <div class="btn-group">
-    <a href="{% url 'bookmark:add' %}" class="btn btn-success">Add Bookmark</a>
+
+    {% if user.is_authenticated %}
+        <a href="{% url 'accounts:logout' %}" class="btn btn-light">logout</a>
+        <a href="{% url 'bookmark:add' %}" class="btn btn-success">Add Bookmark</a>
+    {% else %}
+        <a href="{% url 'accounts:register' %}" class="btn btn-warning">register</a>
+        <a href="{% url 'accounts:login' %}" class="btn btn-info">login</a>
+    {%endif %}
 </div>
     <table class="table">
         <thead>
