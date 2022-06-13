@@ -27,7 +27,7 @@ def my_login(request):
         else:
             return render(request, 'accounts/login_fail.html')
     else:
-        form = LoginForm()
+        form = RegisterForm()
         return render(request, 'accounts/login.html', {'form': form})
 
 def my_logout(request):
