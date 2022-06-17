@@ -24,7 +24,7 @@ class BookmarkListView(ListView):
             # bookmark_list = Bookmark.objects.none()  # 북마크 다 보여줌
         return bookmark_list
 
-class BookmarkCreateView(CreateView):
+class BookmarkCreateView(LoginRequiredMixin, CreateView):
     model = Bookmark
     fields = ['profile', 'name', 'url']    #'__al__'
     template_name_suffix = '_create'    #bookmark_form.html -> bookmark_create.html
@@ -37,11 +37,11 @@ class BookmarkCreateView(CreateView):
         return {'profile': profile}
 
 
-class BookmarkDetilView(DetailView):
+class BookmarkDetilView(LoginRequiredMixin, DetailView):
     model = Bookmark
     
     
-class BookmarkUpdateView(UpdateView):
+class BookmarkUpdateView(LoginRequiredMixin, UpdateView):
     model = Bookmark
     fields = ['name', 'url']    # '__all__'
     template_name_suffix = '_update'    #bookmark_update.html
@@ -49,6 +49,6 @@ class BookmarkUpdateView(UpdateView):
     # success_url이 없으면 model의 get_absolute_url()호출
 
 
-class BookmarkDeleteView(DeleteView):
+class BookmarkDeleteView(LoginRequiredMixin, DeleteView):
     model = Bookmark
     success_url = reverse_lazy('bookmark:list')

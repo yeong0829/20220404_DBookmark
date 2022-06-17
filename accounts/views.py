@@ -30,6 +30,8 @@ def my_login(request):
         form = RegisterForm()
         return render(request, 'accounts/login.html', {'form': form})
 
+
+@login_required
 def my_logout(request):
     logout(request)
     return redirect('bookmakr:list')
