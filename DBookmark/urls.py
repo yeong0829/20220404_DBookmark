@@ -21,7 +21,9 @@ from django.urls import path, include
 from bookmark.views import BookmarkListView
 
 urlpatterns = [
-    path('', BookmarkListView.as_view()),
+    path('', bookmark.views.list_bookmark, name='home'),
+    # path('', BookmarkListView.as_view()),
+    path('accounts/', include('bookmark.urls')),
     path('bookmark/', include('bookmark.urls')),
     path('admin/', admin.site.urls),
 ]
