@@ -80,5 +80,8 @@
      - bookmark/views
      - bookmark/urls
      - DBookmark/urls
+   - FBV detail_bookmark
+     - bookmark/views
+     - bookmark/urls
 
 

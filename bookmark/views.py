@@ -64,3 +64,8 @@ def list_bookmark(request):
         bookmark_list = Bookmark.object.none()      # 북마크 없는거 가져오기
 
     return render(request, 'bookmark/bookmark_list.html', {'bookmark_list': bookmark_list})
+
+
+def detail_bookmark(request, pk):
+    bookmark = Bookmark.objects.get(pk=pk)
+    return render(request, 'bookmark/bookmark_detail.html', {'bookmark': bookmark_detail})
