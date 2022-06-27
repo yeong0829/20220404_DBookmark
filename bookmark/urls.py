@@ -2,6 +2,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
 
+from accounts import views
 from bookmark.views import BookmarkListView, BookmarkCreateView, BookmarkDetilView, BookmarkUpdateView, \
     BookmarkDeleteView
 
@@ -14,7 +15,8 @@ urlpatterns = [
     # path('detail/<int:pk>', BookmarkDetilView.as_view(), name='detail'),   #bookmark:detail
     path('detail2/<int:pk>', views.detail_bookmark, mane = 'detail'),       #bookmark:detail
     path('edit/<int:pk>', BookmarkUpdateView.as_view(), name='edit'),   #bookmark:edit
-    path('delete/<int:pk>/',  BookmarkDeleteView.as_view(), name='delete')
+    # path('delete/<int:pk>/',  BookmarkDeleteView.as_view(), name='delete')
+    path('delete2/<int:pk>/',  views.delete_bookmark, name='delete')    #bookmark:delete
 ]
 
 if settings.DEBUG:

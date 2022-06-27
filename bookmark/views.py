@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import render, redirect
 
 # 기능 추가
 from django.urls import reverse_lazy
@@ -66,6 +67,16 @@ def list_bookmark(request):
     return render(request, 'bookmark/bookmark_list.html', {'bookmark_list': bookmark_list})
 
 
-def detail_bookmark(request, pk):
+def detail_bookmark(request, pk, bookmark_detail=None):
     bookmark = Bookmark.objects.get(pk=pk)
     return render(request, 'bookmark/bookmark_detail.html', {'bookmark': bookmark_detail})
+
+
+def delete_bookmark(request, pk):
+    if request.method == 'POST':    # 삭제 버튼 눌렀을 때
+        bookmark = Bookmark.objects.get(pk=pk)
+        bookmark.delete()   #DELETE FROM table WHERE 조건
+        return redirect('bookmark:list')
+    else:   # 처음 bookmark_delete.html 요청
+        bookmark = Bookmark.objects.get(pk=pk)
+        return render(request, 'bookmark/bookmark_confirm_delete.html', {'bookmark': bookmark})
