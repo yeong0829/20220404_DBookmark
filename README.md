@@ -86,5 +86,9 @@
    - FBV delete_bookmark
      - bookmark/views
      - bookmark/urls
+   - FBV create_bookmark
+     - bookmark/forms
+     - bookmark/views
+     - bookamrk/urls
 
 
