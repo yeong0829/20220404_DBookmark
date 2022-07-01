@@ -22,3 +22,9 @@ class BookmarkCreationForm(forms.ModelForm):
            url=self.cleaned_data('url'),   # 사용자가 입력한 내용을 clean_url()하고 깨끗해진 것 가져오기
        )
        return new_bookmark
+
+
+class BookmarkChangeForm(forms.ModelForm):
+    class Meta:
+        model = Bookmark
+        fields = ['name', 'url']
