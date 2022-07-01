@@ -90,5 +90,6 @@
      - bookmark/forms
      - bookmark/views
      - bookamrk/urls
+     - url에 http://, https:// 없으면 추가하기
 
 
