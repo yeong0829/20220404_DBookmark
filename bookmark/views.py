@@ -83,6 +83,7 @@ def delete_bookmark(request, pk):
         return render(request, 'bookmark/bookmark_confirm_delete.html', {'bookmark': bookmark})
 
 
+@Login_required
 def create_bookmark(request):
     if request.mothod == "POST":  #사용자가 입력하고 버튼 눌렀을 때
         form = BookmarkCreationForm(request.POST)  # form 가져오기
